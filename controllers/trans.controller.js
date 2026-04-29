@@ -37,7 +37,7 @@ const getByFilter = async (req, res) => {
         }
 
         const pageNum  = Math.max(1, parseInt(page)  || 1);
-        const limitNum = Math.max(1, parseInt(limit) || 100);
+        const limitNum = Math.max(1, parseInt(limit) || 10);
 
         const data = await transaction.find(filter)
             .skip((pageNum - 1) * limitNum)
